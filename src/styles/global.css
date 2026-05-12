@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/**
+ * Tailwind v4 — @theme inline 으로 토큰을 Tailwind 유틸에 연결.
+ * 컴포넌트는 토큰 변수를 직접 참조하거나 Tailwind 유틸 둘 다 사용 가능.
+ */
+@theme inline {
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-overlay: var(--bg-overlay);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-accent: var(--accent-primary);
+  --color-accent-glow: var(--accent-glow);
+  --color-accent-warn: var(--accent-warn);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-border-emphasis: var(--border-emphasis);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+/* ─── Reset / Base ───────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.7; /* 한글 본문은 1.5보다 1.7 가독성 우수 */
+  letter-spacing: -0.005em; /* 미세 타이트닝 — Pretendard 권장값 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "ss02"; /* Pretendard stylistic sets */
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background-color: rgba(var(--accent-primary-rgb), 0.4);
+  color: var(--text-primary);
+}
+
+/* ─── Custom Scrollbar (Lenis와는 별개로 폴백) ───── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-emphasis);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(var(--accent-primary-rgb), 0.5);
+}
+
+/* ─── Utility Components ──────────────────────────── */
+.container-x {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  /* 한글이 섞이면 음수 letter-spacing이 자모 가독성을 해침.
+     기본은 -0.01em로 약하게, 큰 헤딩은 컴포넌트에서 -0.025em로 더 타이트. */
+  letter-spacing: -0.01em;
+  font-feature-settings: "ss01", "ss02";
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0; /* mono는 lining만 */
+}
+
+/* 한글 본문 가독성 — paragraph 내부 word-break 제어 */
+p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* Kinetic Typography — 그라디언트 라인.
+   inline-block 자식에 부모의 background-clip: text가 전파되지 않아서
+   각 .kt-char 가 자체 그라디언트를 갖되, background-attachment: fixed로
+   viewport 전체를 기준점 삼아 글자 사이 그라디언트가 연속되도록 처리. */
+.kt-gradient-line .kt-char {
+  background: linear-gradient(
+      135deg,
+      var(--accent-primary),
+      var(--accent-glow)
+    )
+    fixed;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* FOUC 방지 — 앱 준비 완료(=Loader 슬라이드 끝) 전까지 Hero 글자는 hidden.
+   GSAP가 인트로 시 fromTo로 명시적으로 초기 상태에서 정착 상태로 애니메이션. */
+main[data-app-ready="false"] .kt-line-1 .kt-char,
+main[data-app-ready="false"] .kt-line-2 .kt-char {
+  opacity: 0;
+}
+main[data-app-ready="false"] .hero-eyebrow,
+main[data-app-ready="false"] .hero-sub,
+main[data-app-ready="false"] .hero-scroll-hint {
+  opacity: 0;
+}
+
+/* Noise grain 미세 깜빡임 — 다크 톤에 텍스처 부여 */
+@keyframes noise-flicker {
+  0%, 100% { opacity: 0.30; }
+  50%      { opacity: 0.42; }
+}
+.hero-noise {
+  animation: noise-flicker 4s ease-in-out infinite;
+}
+
+/* Hero 영상 폴백 — public/hero-bg.mp4 가 없을 때도 보이도록.
+   hue-rotate + scale로 천천히 흐르는 느낌. scroll transform과 별도 element라 충돌 X. */
+@keyframes hero-media-shift {
+  0%   { filter: hue-rotate(0deg) saturate(1.0); transform: scale(1) translate(0, 0); }
+  50%  { filter: hue-rotate(35deg) saturate(1.15); transform: scale(1.04) translate(-1%, 1%); }
+  100% { filter: hue-rotate(-25deg) saturate(0.9); transform: scale(1.02) translate(1%, -1%); }
+}
+
+/* 영상이 로드되면 폴백 위에 덮어 가려진다. video는 object-fit: cover. */
+.hero-video {
+  /* 영상 파일 없을 때 비디오 element가 빈 영역으로 안 보이도록 */
+  background: transparent;
+}
+
+/* Lenis 통합 시 추가 (M2에서) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}

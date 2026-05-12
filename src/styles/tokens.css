@@ -1,0 +1,117 @@
+/**
+ * Design Tokens — Dark Theme Base
+ * 컬러·타이포·모션의 단일 진실 공급원.
+ * 컴포넌트는 토큰 변수만 참조하고 raw 값을 직접 쓰지 않는다.
+ */
+
+:root {
+  /* ─── Background ─────────────────────────────── */
+  --bg-base: #0a0a0f;          /* 거의 검정, 푸른빛 */
+  --bg-elevated: #12121a;      /* 카드/엘리베이션 1 */
+  --bg-overlay: #1b1b26;       /* 모달/오버레이 */
+  --bg-glass-rgb: 255, 255, 255;
+  --bg-glass: rgba(var(--bg-glass-rgb), 0.04);
+
+  /* ─── Text ───────────────────────────────────── */
+  --text-primary: #f4f4f7;
+  --text-secondary: #9b9bab;
+  --text-muted: #5a5a6e;
+  --text-inverted: #0a0a0f;
+
+  /* ─── Accent ─────────────────────────────────── */
+  --accent-primary: #7c5cff;   /* Violet — 에이전틱 AI 강조 */
+  --accent-primary-rgb: 124, 92, 255;
+  --accent-glow: #00e5ff;      /* Cyan — 호버/하이라이트 */
+  --accent-glow-rgb: 0, 229, 255;
+  --accent-warn: #ff5c8a;      /* Pink — 포인트 */
+  --accent-warn-rgb: 255, 92, 138;
+
+  /* ─── Borders ────────────────────────────────── */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-emphasis: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(var(--accent-primary-rgb), 0.4);
+
+  /* ─── Shadows ────────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-glow-primary: 0 0 24px rgba(var(--accent-primary-rgb), 0.35);
+  --shadow-glow-cyan: 0 0 24px rgba(var(--accent-glow-rgb), 0.35);
+
+  /* ─── Typography ─────────────────────────────── */
+  /* font-family fallback 동작: Latin → Space Grotesk/Inter,
+     한글 → Pretendard로 자동 분기 (Space Grotesk/Inter엔 한글 글리프 없음) */
+  --font-display: "Space Grotesk", "Pretendard Variable", Pretendard,
+    "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-body: "Inter", "Pretendard Variable", Pretendard,
+    "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-korean: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo",
+    system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.75rem;
+  --text-6xl: 5rem;
+
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* ─── Spacing ────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ─── Radius ─────────────────────────────────── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ─── Motion ─────────────────────────────────── */
+  --ease-out-quart: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --dur-fast: 200ms;
+  --dur-base: 320ms;
+  --dur-slow: 600ms;
+  --dur-slower: 900ms;
+
+  /* ─── Layout ─────────────────────────────────── */
+  --container-max: 1280px;
+  --content-max: 880px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+
+  /* ─── Z-index ────────────────────────────────── */
+  --z-base: 1;
+  --z-elevated: 10;
+  --z-overlay: 100;
+  --z-modal: 500;
+  --z-toast: 1000;
+}
+
+/* 모바일 reduced motion 대응 */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-slower: 0ms;
+  }
+}

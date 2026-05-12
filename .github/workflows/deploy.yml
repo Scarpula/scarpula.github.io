@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # 수동 실행도 가능
+  workflow_dispatch:
+
+# GITHUB_TOKEN 권한 — Pages 배포 + OIDC
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 동시 배포 1개로 제한 (대기 중 작업은 취소)
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        # ▼ user site (scarpula.github.io) 또는 custom 도메인이면 그대로 "/"
+        # ▼ project repo (sub-path) 이면 아래 줄을 활성화:
+        #   VITE_BASE: /portfolio_site/
+        env:
+          VITE_BASE: /
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          # 첫 배포 시 Pages 가 비활성화 상태면 자동으로 enable
+          enablement: true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
