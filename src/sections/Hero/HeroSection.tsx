@@ -450,7 +450,7 @@ export default function HeroSection() {
           >
             멀티 에이전트 워크플로우 설계부터 IoT · 모바일 · SaaS 구현까지,
             <br />
-            Claude Code · MCP · Flutter · React 위에서 7개의 시스템을 만들었습니다.
+            Claude Code · MCP · Flutter · React 위에서 8개의 시스템을 만들었습니다.
           </p>
         </div>
       </div>

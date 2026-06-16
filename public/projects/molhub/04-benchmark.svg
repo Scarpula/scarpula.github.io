@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="-apple-system, 'Segoe UI', Inter, sans-serif">
+  <defs>
+    <radialGradient id="g4top" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.14"/><stop offset="60%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g4acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#0b0710"/>
+  <rect width="1280" height="720" fill="url(#g4top)"/>
+
+  <g transform="translate(64 60)">
+    <rect x="0" y="0" width="220" height="28" rx="14" fill="#10b981" fill-opacity="0.10" stroke="#34d399" stroke-opacity="0.25"/>
+    <text x="110" y="19" font-size="12" fill="#6ee7b7" text-anchor="middle">What sets us apart</text>
+  </g>
+  <text x="64" y="142" font-size="34" font-weight="600" fill="#fafafa" letter-spacing="-0.5">Most AI drug tools claim accuracy.</text>
+  <text x="64" y="184" font-size="34" font-weight="600" fill="url(#g4acc)" letter-spacing="-0.5">We publish ours.</text>
+  <text x="64" y="222" font-size="15" fill="#a1a1aa">We dogfood MolHub on real targets (EGFR · DUD-E) and report the numbers — limitations included.</text>
+
+  <!-- headline metric cards -->
+  <g transform="translate(64 256)">
+    <g>
+      <rect width="360" height="120" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="24" y="74" font-size="48" font-weight="600" fill="#fafafa" font-family="ui-monospace,monospace">0.65</text>
+      <text x="24" y="102" font-size="12.5" fill="#9ca3af">ROC-AUC, blind docking — reported, not hidden</text>
+    </g>
+    <g transform="translate(384 0)">
+      <rect width="360" height="120" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#34d399" stroke-opacity="0.25"/>
+      <text x="24" y="74" font-size="48" font-weight="600" fill="#6ee7b7" font-family="ui-monospace,monospace">2×</text>
+      <text x="24" y="102" font-size="12.5" fill="#9ca3af">top-5/10% enrichment from pocket-targeting</text>
+    </g>
+    <g transform="translate(768 0)">
+      <rect width="360" height="120" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="24" y="58" font-size="18" font-weight="600" fill="#f4f4f5">Triage signal,</text>
+      <text x="24" y="84" font-size="18" font-weight="600" fill="#f4f4f5">not binding truth.</text>
+      <text x="24" y="106" font-size="12.5" fill="#a78bfa">Read the benchmark →</text>
+    </g>
+  </g>
+
+  <!-- benchmark table -->
+  <g transform="translate(64 412)">
+    <text x="0" y="0" font-size="12" fill="#71717a" letter-spacing="1">RETROSPECTIVE DUD-E EGFR · 40 actives + 160 decoys · product's own protocol</text>
+    <rect x="0" y="16" width="1064" height="244" rx="16" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.08"/>
+    <g font-size="13.5" font-family="ui-monospace,monospace">
+      <!-- header -->
+      <g fill="#71717a" font-size="12">
+        <text x="28" y="56">Metric</text>
+        <text x="430" y="56" text-anchor="end">Blind box (default)</text>
+        <text x="640" y="56" text-anchor="end">Pocket box (ATP site)</text>
+        <text x="1010" y="56" text-anchor="end">Δ</text>
+      </g>
+      <line x1="28" y1="70" x2="1036" y2="70" stroke="#ffffff" stroke-opacity="0.07"/>
+      <!-- rows -->
+      <g fill="#d4d4d8">
+        <text x="28" y="98">ROC-AUC</text><text x="430" y="98" text-anchor="end" fill="#e4e4e7">0.648</text><text x="640" y="98" text-anchor="end" fill="#e4e4e7">0.645</text><text x="1010" y="98" text-anchor="end" fill="#9ca3af">≈ flat</text>
+        <text x="28" y="130">EF 5%</text><text x="430" y="130" text-anchor="end" fill="#e4e4e7">1.0</text><text x="640" y="130" text-anchor="end" fill="#6ee7b7">2.0</text><text x="1010" y="130" text-anchor="end" fill="#6ee7b7">+100%</text>
+        <text x="28" y="162">EF 10%</text><text x="430" y="162" text-anchor="end" fill="#e4e4e7">1.25</text><text x="640" y="162" text-anchor="end" fill="#6ee7b7">2.25</text><text x="1010" y="162" text-anchor="end" fill="#6ee7b7">+80%</text>
+        <text x="28" y="194">Actives in top 20</text><text x="430" y="194" text-anchor="end" fill="#e4e4e7">5 / 20</text><text x="640" y="194" text-anchor="end" fill="#6ee7b7">9 / 20</text><text x="1010" y="194" text-anchor="end" fill="#6ee7b7">+80%</text>
+      </g>
+      <line x1="28" y1="210" x2="1036" y2="210" stroke="#ffffff" stroke-opacity="0.07"/>
+      <text x="28" y="238" font-size="12" font-family="-apple-system,sans-serif" fill="#71717a">Honest read: pocket-targeting doubles top-5–10% triage enrichment; the AlphaFold side-chain packing is the next lever, not the box.</text>
+    </g>
+  </g>
+</svg>

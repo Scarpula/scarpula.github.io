@@ -43,6 +43,153 @@ const ASSET = "/projects";
 
 export const PROJECT_DETAILS: Record<string, ProjectDetail> = {
   // ─────────────────────────────────────────────────
+  //  MolHub — 브라우저 신약 탐색 SaaS (라이브 · Paddle 실결제)
+  // ─────────────────────────────────────────────────
+  molhub: {
+    slug: "molhub",
+    heroImage: `${ASSET}/molhub/01-cover.svg`,
+    intro:
+      "**MolHub**([molhub.bio](https://www.molhub.bio))는 클러스터·라이선스·conda 설치 없이 **브라우저 탭 하나에서 도는 초기 신약 탐색 SaaS**입니다. " +
+      "사용자가 영어로 목표를 말하면 — *\"Design novel, synthesizable EGFR inhibitor leads.\"* — 에이전트가 타겟을 해석하고, ChEMBL의 알려진 actives를 끌어와 그라운딩하고, **데이터베이스에 없는 신규 분자를 설계**한 뒤, 약물성·합성가능성·신규성으로 트리아지하고, AlphaFold 구조에 **AutoDock Vina로 자동 도킹**해 근거가 붙은 랭킹 후보 목록을 돌려줍니다.\n\n" +
+      "기획·제품·백엔드·결제·법무·벤치마크·런칭 마케팅까지 **1인 풀사이클**로 구축해 실제로 운영 중입니다. ChEMBL 2.9M · AlphaFold · RDKit · Vina 등 오픈사이언스 스택 위에 올렸고, 학계(.edu/.ac)는 무료, 유료 플랜은 **Paddle(Merchant of Record) 실결제 → Payoneer USD 정산**으로 돌아갑니다. " +
+      "톤은 일관되게 정직합니다 — 도킹은 *트리아지 신호*이지 결합 보장이나 임상 결과가 아니라는 점을 제품·마케팅 전반에서 명시합니다.",
+    sections: [
+      {
+        title: "Copilot — 목표 한 줄 → 도킹된 후보",
+        body:
+          "제품의 핵심은 자율 Copilot입니다. 평문 목표를 입력하면 에이전트가 **타겟 해석 → ChEMBL 15개 potent actives 조사 → BRICS 재조합으로 신규 분자 생성 → 다목적 트리아지(QED · 합성가능성 · 신규성, PAINS/Brenk 필터) → 상위 후보 자동 도킹(Vina) → 근거 한 줄이 붙은 랭킹**까지 한 번에 흘려보냅니다. 각 단계는 화면에 스트리밍됩니다.\n\n" +
+          "반환되는 분자는 어떤 데이터베이스에도 존재하지 않는 — 생성된 뒤 점수가 매겨진 — 후보입니다. 가치는 오픈된 엔진(ChEMBL/AlphaFold/RDKit/Vina) 자체가 아니라, 목표를 **완결된 캠페인으로 오케스트레이션**해 브라우저 안에서 끝내는 데 있습니다.",
+        image: `${ASSET}/molhub/02-copilot.svg`,
+      },
+      {
+        title: "우리는 우리 도구로 우리를 깬다 — 정직한 벤치마크",
+        body:
+          "남에게 신뢰를 요구하기 전에 EGFR(CHEMBL203 / P00533)로 자가 검증했습니다. 첫 Copilot 런은 자신만만한 리포트를 내놨지만 실제 분자는 단일 chemotype(2,5-dimethylpyrrole + morpholine, vinyl bridge)으로 수렴한 광반응성·Michael-acceptor 류 — 메디시널 케미스트가 즉시 거르는 것들이었습니다. *도구를 써서* 이 결함을 발견했고, **반응성 모티프 거부 필터 + Bemis–Murcko 다양성 캡**을 같은 세션에 출시했습니다. 이후 같은 캠페인은 piperazine amide 계열의 깨끗하고 다양한 셋(QED 0.85–0.92, SA 1.4–2.5, alert 0)을 반환합니다.\n\n" +
+          "도킹은 표준 벤치마크(DUD-E EGFR, 40 actives + 160 decoys)로 *제품 자체 프로토콜*을 돌렸습니다. blind box 기본값은 ROC-AUC ≈ 0.65 — 무작위보다 낫지만 강하지 않은 정직한 숫자. 포켓 타게팅은 전체 판별력은 그대로지만 실제 트리아지 구간(top 5–10%) 인리치먼트를 **약 2배**(EF5% 1.0→2.0)로 끌어올립니다. 더 나아가 receptor relaxation도 실험했고 *효과가 없자 파이프라인에 넣지 않기로* 결정한 것까지 그대로 공개했습니다. \"0.65와 그 고친 과정을 보여주는 게 보도자료보다 낫다\" — 회의적인 과학 청중에게는 이 정직함이 해자입니다.",
+        image: `${ASSET}/molhub/04-benchmark.svg`,
+      },
+      {
+        title: "실결제 SaaS — Paddle MoR → Payoneer 정산",
+        body:
+          "데모가 아니라 **실제로 카드를 긁는 SaaS**입니다. 학계(.edu/.ac 자동 인증)는 무료, Basic $99/mo · Pro $499/mo 두 유료 플랜이 있습니다.\n\n" +
+          "1인 사업자 컴플라이언스를 지키기 위해 모든 결제는 **Paddle(Merchant of Record)** 로 흐릅니다 — VAT·세금·차지백을 Paddle이 처리합니다. `@paddle/paddle-js` 오버레이 체크아웃을 띄우고, Supabase user id를 custom data로 실어 보낸 뒤, **웹훅이 결제를 프로필에 연결해 플랜을 즉시 업그레이드**합니다. Paddle 승인이 도메인 단위라 승인 대기 중인 `app.molhub.bio`에서는 승인된 메인 도메인의 공개 `/checkout` 브릿지로 hop 시키는 우회까지 구현했습니다. 매출은 **Payoneer USD 계좌**로 정산됩니다.",
+        image: `${ASSET}/molhub/03-billing-paddle.svg`,
+      },
+      {
+        title: "멀티채널 런칭 — 하나의 정직한 메시지",
+        body:
+          "런칭은 채널별 카피팩으로 준비했고, 게이트 없는 채널부터 순차 집행했습니다.\n\n" +
+          "• **Product Hunt** — *\"Drug discovery in your browser — an AI agent that designs and docks molecules\"* (AI · Science · Developer Tools · SaaS)\n" +
+          "• **X / Twitter** — *\"Tell MolHub a goal in plain English → it designs novel molecules, triages them, and docks the best against an AlphaFold structure. In your browser. 🧵\"* (#compchem #drugdiscovery, 데모 GIF 첨부)\n" +
+          "• **LinkedIn**(창업자 개인 계정) — *\"Most 'AI drug discovery' sits behind enterprise licenses and clusters. I wanted the opposite…\"*\n" +
+          "• **Hacker News Show HN** + **Reddit**(r/comp_chem · r/bioinformatics) — 신규 계정 마찰을 고려해 워밍업 후 집행.\n\n" +
+          "모든 채널에 동일한 가드레일을 적용했습니다 — \"AI가 신약을 설계한다\" 류 과장 대신 \"리드 발굴·트리아지 가속\", 도킹=추정/트리아지 명시, 임상·효능 주장 금지. 배너는 near-black `#0b0710` · 바이올렛→푸시아 그라데이션 · 에메랄드 Vina 점수 · 분자 브랜드마크의 브랜드 키트로 채널 간 일관성을 유지했습니다.",
+        image: `${ASSET}/molhub/05-launch.svg`,
+      },
+      {
+        title: "아키텍처 — CPU 전용 · EU 데이터 레지던시",
+        body:
+          "프론트는 **Next.js 15 · React 19 · App Router · Tailwind v4**(Vercel), 과학 컴퓨트는 **FastAPI + Celery 워커**(Hetzner Falkenstein, EU)로 분리했습니다. RDKit · AutoDock Vina · Meeko · FPocket이 도킹/포켓/준비 파이프라인을, 3Dmol.js가 결합 포즈 뷰어를 담당합니다. OpenAPI 21개 엔드포인트, 비동기 잡, Caddy + Let's Encrypt.\n\n" +
+          "하드 제약을 명시적으로 지켰습니다 — **$5K MRR 전까지 GPU 0**(도킹·검색·포켓 탐지 전부 CPU에서 동작), 과학 데이터는 EU에 상주(Supabase US-East는 Auth 전용), 레퍼런스 데이터는 재배포 가능한 오픈 라이선스만 사용. 고정 월 OPEX는 ~$190 수준으로 묶었습니다.",
+        image: `${ASSET}/molhub/06-architecture.svg`,
+      },
+    ],
+    techGroups: [
+      {
+        label: "Frontend",
+        items: [
+          "Next.js 15 (App Router)",
+          "React 19",
+          "TypeScript",
+          "Tailwind v4",
+          "3Dmol.js (포즈 뷰어)",
+          "@paddle/paddle-js",
+          "Sentry",
+        ],
+      },
+      {
+        label: "Backend · Compute",
+        items: [
+          "FastAPI",
+          "Celery (async 워커)",
+          "RDKit",
+          "AutoDock Vina",
+          "Meeko / FPocket",
+          "OpenMM (relaxation 실험)",
+          "Hetzner Falkenstein (EU)",
+          "Caddy + Let's Encrypt",
+        ],
+      },
+      {
+        label: "Data · Auth",
+        items: [
+          "ChEMBL 2.9M (RDKit 정규화 · Morgan FP)",
+          "AlphaFold 200M+ · RCSB PDB",
+          "PubChem (on-demand)",
+          "Enamine REAL / ZINC-22 (37B+)",
+          "Supabase (Auth / RLS / profiles)",
+          "pgvector",
+        ],
+      },
+      {
+        label: "Payments · GTM",
+        items: [
+          "Paddle (Merchant of Record)",
+          "Paddle 웹훅 → 플랜 업그레이드",
+          "Payoneer USD 정산",
+          "Resend (트랜잭션 메일)",
+          "Product Hunt · X · LinkedIn · HN",
+          "DUD-E 벤치마크 공개",
+        ],
+      },
+    ],
+    gallery: [
+      {
+        src: `${ASSET}/molhub/01-cover.svg`,
+        caption:
+          "랜딩 히어로 — \"Drug discovery, in your browser.\" 공개 프리뷰의 EGFR(1M17) 배치 도킹: Gefitinib −7.71 · Erlotinib −7.42 kcal/mol",
+        aspect: "wide",
+      },
+      {
+        src: `${ASSET}/molhub/02-copilot.svg`,
+        caption:
+          "Copilot 캠페인 — 목표 한 줄 → ChEMBL 그라운딩 · 신규 분자 생성 · 트리아지 · 자동 도킹 → 근거가 붙은 랭킹 (piperazine amide, QED 0.85–0.92, −7.2~−7.5 kcal/mol)",
+        aspect: "wide",
+      },
+      {
+        src: `${ASSET}/molhub/03-billing-paddle.svg`,
+        caption:
+          "실결제 — Academic 무료 / Basic $99 / Pro $499. Paddle MoR 오버레이 체크아웃 → 웹훅 → Supabase 플랜 업그레이드 → Payoneer USD 정산",
+        aspect: "wide",
+      },
+      {
+        src: `${ASSET}/molhub/04-benchmark.svg`,
+        caption:
+          "정직한 자가 벤치마크 — DUD-E EGFR. blind ROC-AUC 0.65를 그대로 공개, 포켓 타게팅으로 top-5/10% 인리치먼트 약 2배. \"We publish ours.\"",
+        aspect: "wide",
+      },
+      {
+        src: `${ASSET}/molhub/05-launch.svg`,
+        caption:
+          "멀티채널 런칭 — Product Hunt · X · LinkedIn · Show HN + Reddit. 채널 공통 가드레일: 과장 금지, 도킹=트리아지 신호 명시",
+        aspect: "wide",
+      },
+      {
+        src: `${ASSET}/molhub/06-architecture.svg`,
+        caption:
+          "아키텍처 — Next.js 15(Vercel) · FastAPI + Celery(Hetzner EU) · Supabase Auth · 오픈사이언스 데이터. $5K MRR 전까지 GPU 0, EU 데이터 레지던시",
+        aspect: "wide",
+      },
+    ],
+    stats: [
+      { label: "Status", value: "Live · molhub.bio" },
+      { label: "결제", value: "Paddle MoR → Payoneer" },
+      { label: "라이브러리", value: "ChEMBL 2.9M" },
+      { label: "DUD-E ROC-AUC", value: "0.65 (공개)" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────
   //  숨 (Soom / MaumSum) — Flutter 공황장애 진단·관리 SaaS
   // ─────────────────────────────────────────────────
   soom: {

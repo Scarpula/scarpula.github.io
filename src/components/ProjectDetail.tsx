@@ -177,9 +177,10 @@ export default function ProjectDetail({ project, onClose }: Props) {
                 className="font-mono text-[10px] uppercase tracking-[0.4em]"
                 style={{ color: "var(--text-muted)" }}
               >
-                {project.org === "iotplus-code"
-                  ? "Commercial Project"
-                  : "Scarpula · Personal"}
+                {project.label ??
+                  (project.org === "iotplus-code"
+                    ? "Commercial Project"
+                    : "Scarpula · Personal")}
               </p>
               <h1
                 className="font-display mt-3 text-balance text-5xl font-bold leading-[1.05] sm:text-6xl md:text-7xl"

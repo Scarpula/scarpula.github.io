@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="-apple-system, 'Segoe UI', Inter, sans-serif">
+  <defs>
+    <radialGradient id="g5top" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.16"/><stop offset="60%" stop-color="#d946ef" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g5acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#e879f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#0b0710"/>
+  <rect width="1280" height="720" fill="url(#g5top)"/>
+
+  <text x="64" y="66" font-size="13" fill="#e879f9" letter-spacing="3">GO-TO-MARKET · MULTI-CHANNEL LAUNCH</text>
+  <text x="64" y="104" font-size="32" font-weight="600" fill="#fafafa" letter-spacing="-0.5">One honest message, shipped across every channel</text>
+
+  <!-- Product Hunt -->
+  <g transform="translate(64 140)">
+    <rect width="560" height="172" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+    <circle cx="40" cy="44" r="16" fill="#da552f"/>
+    <text x="40" y="50" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">P</text>
+    <text x="68" y="40" font-size="16" font-weight="600" fill="#f4f4f5">Product Hunt</text>
+    <text x="68" y="60" font-size="11.5" fill="#71717a">AI · Science · Developer Tools · SaaS</text>
+    <text x="28" y="98" font-size="13.5" fill="#d4d4d8">Tagline: "Drug discovery in your browser — an AI</text>
+    <text x="28" y="120" font-size="13.5" fill="#d4d4d8">agent that designs and docks molecules."</text>
+    <text x="28" y="150" font-size="12" fill="#9ca3af">Maker comment: a real search→generate→dock→triage loop on open data.</text>
+  </g>
+
+  <!-- X / Twitter -->
+  <g transform="translate(656 140)">
+    <rect width="560" height="172" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="24" y="28" width="32" height="32" rx="8" fill="#000000" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="40" y="51" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">𝕏</text>
+    <text x="68" y="40" font-size="16" font-weight="600" fill="#f4f4f5">X / Twitter thread</text>
+    <text x="68" y="60" font-size="11.5" fill="#71717a">#compchem #drugdiscovery</text>
+    <text x="28" y="98" font-size="13.5" fill="#d4d4d8">"Tell MolHub a goal in plain English → it designs</text>
+    <text x="28" y="120" font-size="13.5" fill="#d4d4d8">novel molecules, triages them, and docks the best</text>
+    <text x="28" y="142" font-size="13.5" fill="#d4d4d8">against an AlphaFold structure. In your browser. 🧵"</text>
+    <text x="28" y="166" font-size="11.5" fill="#9ca3af">+ demo GIF: goal input → ranking + live Vina score</text>
+  </g>
+
+  <!-- LinkedIn -->
+  <g transform="translate(64 332)">
+    <rect width="560" height="172" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="24" y="28" width="32" height="32" rx="6" fill="#0a66c2"/>
+    <text x="40" y="51" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Georgia,serif">in</text>
+    <text x="68" y="40" font-size="16" font-weight="600" fill="#f4f4f5">LinkedIn — founder post</text>
+    <text x="68" y="60" font-size="11.5" fill="#71717a">personal account · no gate</text>
+    <text x="28" y="98" font-size="13.5" fill="#d4d4d8">"Most 'AI drug discovery' sits behind enterprise</text>
+    <text x="28" y="120" font-size="13.5" fill="#d4d4d8">licenses and clusters. I wanted the opposite: a real</text>
+    <text x="28" y="142" font-size="13.5" fill="#d4d4d8">search → generate → dock → triage loop in a browser."</text>
+    <text x="28" y="166" font-size="11.5" fill="#9ca3af">Honest about what docking can — and can't — tell you.</text>
+  </g>
+
+  <!-- Hacker News -->
+  <g transform="translate(656 332)">
+    <rect width="560" height="172" rx="16" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="24" y="28" width="32" height="32" rx="6" fill="#ff6600"/>
+    <text x="40" y="51" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Y</text>
+    <text x="68" y="40" font-size="16" font-weight="600" fill="#f4f4f5">Hacker News — Show HN</text>
+    <text x="68" y="60" font-size="11.5" fill="#71717a">+ Reddit r/comp_chem · r/bioinformatics</text>
+    <text x="28" y="98" font-size="13.5" fill="#d4d4d8">"Show HN: MolHub — AI agent that designs and</text>
+    <text x="28" y="120" font-size="13.5" fill="#d4d4d8">docks molecules in your browser."</text>
+    <text x="28" y="150" font-size="12" fill="#9ca3af">Built on ChEMBL · AlphaFold · RDKit · Vina. Free for academics.</text>
+  </g>
+
+  <!-- guardrail strip -->
+  <g transform="translate(64 528)">
+    <rect width="1152" height="150" rx="16" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="28" y="40" font-size="13" fill="#a78bfa" letter-spacing="1.5">MESSAGING GUARDRAILS — the same discipline across all channels</text>
+    <g font-size="13.5" fill="#d4d4d8">
+      <text x="28" y="76">• No "AI designs new drugs" hype → "accelerates lead-finding &amp; triage"</text>
+      <text x="28" y="104">• Docking = estimate / triage signal, explicitly stated — no clinical or efficacy claims</text>
+      <text x="28" y="132">• Brand kit: near-black #0b0710 · violet→fuchsia gradient · emerald Vina scores · molecular brandmark</text>
+    </g>
+  </g>
+</svg>

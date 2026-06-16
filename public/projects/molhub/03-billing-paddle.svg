@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" font-family="-apple-system, 'Segoe UI', Inter, sans-serif">
+  <defs>
+    <radialGradient id="g3top" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.18"/><stop offset="60%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g3btn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="g3acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#e879f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="#0b0710"/>
+  <rect width="1280" height="720" fill="url(#g3top)"/>
+
+  <text x="640" y="66" font-size="13" fill="#a78bfa" letter-spacing="3" text-anchor="middle">REAL-PAYMENT SaaS · LIVE CHECKOUT</text>
+  <text x="640" y="104" font-size="32" font-weight="600" fill="#fafafa" text-anchor="middle" letter-spacing="-0.5">Subscriptions that actually charge — Paddle MoR → Payoneer</text>
+
+  <!-- pricing tiers -->
+  <g transform="translate(64 150)">
+    <!-- Academic -->
+    <g transform="translate(0 0)">
+      <rect width="356" height="318" rx="18" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="28" y="44" font-size="15" font-weight="500" fill="#d4d4d8">Academic</text>
+      <text x="28" y="92" font-size="40" font-weight="600" fill="#fafafa">$0</text>
+      <text x="120" y="92" font-size="13" fill="#71717a">free forever</text>
+      <text x="28" y="116" font-size="12" fill="#71717a">.edu / .ac auto-verified</text>
+      <g font-size="13.5" fill="#d4d4d8">
+        <text x="48" y="156">25 docking jobs / mo</text>
+        <text x="48" y="186">12 AI Copilot campaigns / mo</text>
+        <text x="48" y="216">2.9M-molecule library &amp; search</text>
+        <text x="48" y="246">3D viewer · pockets · NL query</text>
+        <g fill="#a78bfa"><text x="28" y="156">✓</text><text x="28" y="186">✓</text><text x="28" y="216">✓</text><text x="28" y="246">✓</text></g>
+      </g>
+      <rect x="28" y="266" width="300" height="38" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="178" y="291" font-size="13.5" font-weight="500" fill="#f4f4f5" text-anchor="middle">Start free</text>
+    </g>
+    <!-- Basic (highlight) -->
+    <g transform="translate(376 0)">
+      <rect width="356" height="318" rx="18" fill="#8b5cf6" fill-opacity="0.07" stroke="#a78bfa" stroke-opacity="0.40"/>
+      <rect x="28" y="-12" width="98" height="24" rx="12" fill="#8b5cf6"/>
+      <text x="77" y="4" font-size="11" font-weight="500" fill="#ffffff" text-anchor="middle">Most popular</text>
+      <text x="28" y="44" font-size="15" font-weight="500" fill="#d4d4d8">Basic</text>
+      <text x="28" y="92" font-size="40" font-weight="600" fill="#fafafa">$99</text>
+      <text x="128" y="92" font-size="13" fill="#71717a">per month</text>
+      <text x="28" y="116" font-size="12" fill="#71717a">Independent researchers &amp; small labs</text>
+      <g font-size="13.5" fill="#d4d4d8">
+        <text x="48" y="156">30 docking jobs / mo</text>
+        <text x="48" y="186">20 AI Copilot campaigns / mo</text>
+        <text x="48" y="216">Batch screening · upload PDB/SMILES</text>
+        <text x="48" y="246">CSV / SDF export</text>
+        <g fill="#a78bfa"><text x="28" y="156">✓</text><text x="28" y="186">✓</text><text x="28" y="216">✓</text><text x="28" y="246">✓</text></g>
+      </g>
+      <rect x="28" y="266" width="300" height="38" rx="10" fill="url(#g3btn)"/>
+      <text x="178" y="291" font-size="13.5" font-weight="500" fill="#ffffff" text-anchor="middle">Choose Basic</text>
+    </g>
+    <!-- Pro -->
+    <g transform="translate(752 0)">
+      <rect width="356" height="318" rx="18" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="28" y="44" font-size="15" font-weight="500" fill="#d4d4d8">Pro</text>
+      <text x="28" y="92" font-size="40" font-weight="600" fill="#fafafa">$499</text>
+      <text x="146" y="92" font-size="13" fill="#71717a">per month</text>
+      <text x="28" y="116" font-size="12" fill="#71717a">Biotech teams</text>
+      <g font-size="13.5" fill="#d4d4d8">
+        <text x="48" y="156">200 docking jobs / mo</text>
+        <text x="48" y="186">200 campaigns + de-novo generation</text>
+        <text x="48" y="216">Priority queue · team workspaces</text>
+        <text x="48" y="246">API access · up to 5 seats</text>
+        <g fill="#a78bfa"><text x="28" y="156">✓</text><text x="28" y="186">✓</text><text x="28" y="216">✓</text><text x="28" y="246">✓</text></g>
+      </g>
+      <rect x="28" y="266" width="300" height="38" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+      <text x="178" y="291" font-size="13.5" font-weight="500" fill="#f4f4f5" text-anchor="middle">Choose Pro</text>
+    </g>
+  </g>
+
+  <!-- money flow -->
+  <g transform="translate(64 506)">
+    <rect width="1152" height="172" rx="18" fill="#ffffff" fill-opacity="0.02" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="28" y="40" font-size="13" fill="#a78bfa" letter-spacing="1.5">MONEY FLOW — sole-proprietor compliant, end to end</text>
+
+    <!-- nodes -->
+    <g transform="translate(40 66)">
+      <rect width="184" height="76" rx="12" fill="#0d0818" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="92" y="32" font-size="14" font-weight="600" fill="#f4f4f5" text-anchor="middle">Paddle.js overlay</text>
+      <text x="92" y="54" font-size="11.5" fill="#9ca3af" text-anchor="middle">dark theme checkout</text>
+    </g>
+    <g transform="translate(258 66)">
+      <rect width="206" height="76" rx="12" fill="#0d0818" stroke="#a78bfa" stroke-opacity="0.25"/>
+      <text x="103" y="32" font-size="14" font-weight="600" fill="#f4f4f5" text-anchor="middle">Paddle — Merchant</text>
+      <text x="103" y="54" font-size="11.5" fill="#9ca3af" text-anchor="middle">of Record · VAT &amp; tax</text>
+    </g>
+    <g transform="translate(498 66)">
+      <rect width="206" height="76" rx="12" fill="#0d0818" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="103" y="32" font-size="14" font-weight="600" fill="#f4f4f5" text-anchor="middle">Webhook → Supabase</text>
+      <text x="103" y="54" font-size="11.5" fill="#9ca3af" text-anchor="middle">plan upgrade in DB</text>
+    </g>
+    <g transform="translate(738 66)">
+      <rect width="184" height="76" rx="12" fill="#0d0818" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="92" y="32" font-size="14" font-weight="600" fill="#f4f4f5" text-anchor="middle">Instant quota bump</text>
+      <text x="92" y="54" font-size="11.5" fill="#9ca3af" text-anchor="middle">tier unlocked in-app</text>
+    </g>
+    <g transform="translate(956 66)">
+      <rect width="160" height="76" rx="12" fill="#10b981" fill-opacity="0.08" stroke="#34d399" stroke-opacity="0.30"/>
+      <text x="80" y="32" font-size="14" font-weight="600" fill="#6ee7b7" text-anchor="middle">Payoneer USD</text>
+      <text x="80" y="54" font-size="11.5" fill="#9ca3af" text-anchor="middle">payout account</text>
+    </g>
+    <!-- arrows -->
+    <g stroke="#a78bfa" stroke-opacity="0.5" stroke-width="1.6" fill="#a78bfa" fill-opacity="0.5">
+      <line x1="224" y1="104" x2="256" y2="104"/><polygon points="256,104 248,100 248,108"/>
+      <line x1="464" y1="104" x2="496" y2="104"/><polygon points="496,104 488,100 488,108"/>
+      <line x1="704" y1="104" x2="736" y2="104"/><polygon points="736,104 728,100 728,108"/>
+      <line x1="922" y1="104" x2="954" y2="104"/><polygon points="954,104 946,100 946,108"/>
+    </g>
+  </g>
+</svg>

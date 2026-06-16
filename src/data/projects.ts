@@ -25,12 +25,54 @@ export interface ProjectCard {
   coverImage: string;
   org?: "Scarpula" | "iotplus-code";
   codeName?: string;
+  /** 상세 hero 상단 eyebrow 라벨 오버라이드 (미지정 시 org 기준 자동) */
+  label?: string;
 }
 
 // 카드 표지 + 상세 페이지 hero/gallery 모두 이 폴더 하나로 — 프로젝트별 관리
 const ASSET_PREFIX = "/projects";
 
 export const PROJECTS: ProjectCard[] = [
+  // ─── MolHub — 런칭한 신약 탐색 SaaS (Paddle 실결제 + 멀티채널 런칭) ───
+  // 실제 운영 중인 상용 SaaS. 제품·결제·벤치마크·마케팅까지 1인 풀사이클.
+  {
+    slug: "molhub",
+    displayName: "MolHub",
+    codeName: "molhub.bio · 신약 탐색 SaaS (라이브)",
+    label: "Indie SaaS · Live · molhub.bio",
+    oneLiner:
+      "목표를 영어로 말하면 신규 분자를 설계 · 트리아지 · 도킹까지 자동 실행하는 브라우저 신약 탐색 SaaS — Paddle 실결제 · 학계 무료",
+    category: ["agentic-ai", "fullstack", "data"],
+    tech: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind v4",
+      "FastAPI",
+      "Celery",
+      "RDKit",
+      "AutoDock Vina",
+      "FPocket / Meeko",
+      "Supabase (Auth / RLS)",
+      "Paddle (Merchant of Record)",
+      "Hetzner (EU)",
+      "Sentry",
+      "3Dmol.js",
+    ],
+    features: [
+      "Copilot — 자연어 목표 → ChEMBL 그라운딩 · 신규 분자 생성 · 트리아지 · 자동 도킹 · 랭킹 + 근거",
+      "MolHyb 생성 설계 (BRICS) — QED · 합성가능성 · 신규성 다목적 스코어링 + 반응성 모티프 필터",
+      "AutoDock Vina 배치 도킹 + 3D 결합 포즈 · 접촉 잔기 시각화 (CPU 전용)",
+      "ChEMBL 2.9M · AlphaFold 200M+ · 37B+ 구매가능 유사체 통합 데이터",
+      "Paddle MoR 실결제 → 웹훅 → 플랜 업그레이드 → Payoneer USD 정산 (1인 사업자 컴플라이언스)",
+      "정직한 자가 벤치마크 (DUD-E EGFR) 공개 + Product Hunt · X · LinkedIn 멀티채널 런칭",
+    ],
+    repoUrl: "https://github.com/Scar-s-Agent/molhub",
+    isPrivate: true,
+    liveUrl: "https://www.molhub.bio",
+    coverImage: `${ASSET_PREFIX}/molhub/01-cover.svg`,
+    org: "Scarpula",
+  },
   {
     slug: "soom",
     displayName: "숨",

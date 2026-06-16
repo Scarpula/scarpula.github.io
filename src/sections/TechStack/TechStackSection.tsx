@@ -78,7 +78,7 @@ export default function TechStackSection() {
             className="stack-lede mt-5 text-base leading-[1.7]"
             style={{ color: "var(--text-secondary)", wordBreak: "keep-all" }}
           >
-            7개 프로젝트에 실제로 투입된 기술의 합집합입니다. 글자 크기는 사용 빈도를 나타냅니다.
+            8개 프로젝트에 실제로 투입된 기술의 합집합입니다. 글자 크기는 사용 빈도를 나타냅니다.
           </p>
         </header>
 

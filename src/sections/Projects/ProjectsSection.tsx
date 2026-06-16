@@ -213,7 +213,7 @@ export default function ProjectsSection() {
                   }}
                 >
                   <KineticText
-                    text="만들어 온 시스템 7개"
+                    text="만들어 온 시스템 8개"
                     charClassName="kt-char"
                   />
                 </h2>

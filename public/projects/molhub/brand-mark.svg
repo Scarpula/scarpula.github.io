@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="MolHub">
+  <defs>
+    <radialGradient id="s-atom" cx="34%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#ede9fe"/><stop offset="45%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#7c3aed"/>
+    </radialGradient>
+    <radialGradient id="s-hub" cx="34%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#fae8ff"/><stop offset="40%" stop-color="#e879f9"/><stop offset="100%" stop-color="#a21caf"/>
+    </radialGradient>
+    <linearGradient id="s-bond" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#e879f9"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(64 64)">
+    <g stroke="url(#s-bond)" stroke-width="3" stroke-linecap="round" fill="none">
+      <path d="M0,-40 L34.6,-20 L34.6,20 L0,40 L-34.6,20 L-34.6,-20 Z"/>
+      <line x1="0" y1="0" x2="0" y2="-40"/>
+      <line x1="0" y1="0" x2="34.6" y2="20"/>
+      <line x1="0" y1="0" x2="-34.6" y2="20"/>
+    </g>
+    <g fill="url(#s-atom)">
+      <circle cx="0" cy="-40" r="6.5"/><circle cx="34.6" cy="-20" r="6.5"/><circle cx="34.6" cy="20" r="6.5"/>
+      <circle cx="0" cy="40" r="6.5"/><circle cx="-34.6" cy="20" r="6.5"/><circle cx="-34.6" cy="-20" r="6.5"/>
+    </g>
+    <circle cx="-34.6" cy="-20" r="3.4" fill="#34d399"/>
+    <circle cx="0" cy="0" r="9.5" fill="url(#s-hub)"/>
+  </g>
+</svg>
