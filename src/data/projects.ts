@@ -132,6 +132,7 @@ export const PROJECTS: ProjectCard[] = [
     ],
     repoUrl: "https://github.com/Scarpula/bidshield",
     isPrivate: true,
+    liveUrl: "https://bidshield.ai.kr",
     coverImage: `${ASSET_PREFIX}/bidshield/01-cover.png`,
     org: "Scarpula",
   },
